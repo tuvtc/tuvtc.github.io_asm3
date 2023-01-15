@@ -1,0 +1,17 @@
+.sign-form {
+    padding: 1px;
+    background-color: #ccc;
+    gap: 1px;
+}
+
+.sign-btn {
+    border-radius: 0 !important;
+}
+
+.link-signup {
+    color: #0079BC;
+}
+
+.link-signup:hover {
+    cursor: pointer;
+}

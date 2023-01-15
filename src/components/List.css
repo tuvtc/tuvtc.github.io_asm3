@@ -1,0 +1,12 @@
+.prod-img {
+    height: auto;
+    width: 100%;
+}
+
+.prod-img:hover {
+    opacity: 0.5;
+}
+
+.prod {
+    padding: 4px;
+}

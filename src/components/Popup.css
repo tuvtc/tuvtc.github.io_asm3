@@ -1,0 +1,8 @@
+.prod-popup {
+    flex: 1;
+}
+
+.prod-popup img {
+    height: auto;
+    width: 100%;
+}

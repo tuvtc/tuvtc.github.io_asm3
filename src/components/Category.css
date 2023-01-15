@@ -1,0 +1,12 @@
+.proImg {
+    flex: 1;
+}
+
+.proImg img {
+    height: auto;
+    width: 100%;
+}
+
+.proImg:hover {
+    opacity: 0.5;
+}

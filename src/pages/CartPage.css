@@ -1,0 +1,27 @@
+.cart-banner {
+    height: 300px;
+    color: #F8F9FA;
+}
+
+.coupon-btn {
+    background-color: black;
+    color: white;
+}
+
+.coupon-btn:hover {
+    cursor: pointer;
+}
+
+.prodline-img {
+    height: auto;
+    width: 100px
+}
+
+.prodline-img img{
+    height: auto;
+    width: 100%;
+}
+
+th, td  {
+    text-align: center;
+}

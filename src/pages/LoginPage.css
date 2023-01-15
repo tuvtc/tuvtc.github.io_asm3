@@ -1,0 +1,5 @@
+.login-banner {
+    background-image: url("../assets/img/banner1.jpg");
+    background-repeat: repeat;
+    height: 100vh;
+}

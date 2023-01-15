@@ -1,0 +1,23 @@
+.product-sidebar {
+    flex: 0 0 200px;
+}
+
+.product-shop {
+    flex: 1 1 auto;
+}
+
+.product-shop .form-control,
+.product-shop .form-select {
+    display: inline-block;
+    width: auto;
+}
+
+.product-category {
+    font-style: italic;
+    cursor: pointer;
+}
+
+.product-category.active,
+.product-category:hover {
+    color: #DDB150
+}

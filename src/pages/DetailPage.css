@@ -1,0 +1,23 @@
+.detail-img {
+    flex: 0 0 350px;
+}
+
+.detail-img img {
+    width: 100%;
+    height: auto;
+}
+
+.side-img {
+    width: 80px;
+    height: 80px;
+}
+
+.side-img img {
+    width: 100%;
+    height: auto;
+}
+
+.quantity-style {
+    border: 1px solid #ccc;
+    border-right: none;
+}
