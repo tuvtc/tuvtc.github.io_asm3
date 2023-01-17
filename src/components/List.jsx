@@ -1,10 +1,14 @@
+// import du lieu va css
 import React from "react";
 import './List.css'
 import { renderPrice } from '../helper/helper'
 
+
+// Component ProductItem
 function ProductItem(props) {
+  // detructering
   const { img1, name, price, onClick, itemOnRow } = props;
- 
+//  Render du lieu cua item
   return (
     <div onClick={onClick} className="prod" style={{ width: `calc(${100/itemOnRow}%)` }}>
       <div>
@@ -20,9 +24,12 @@ function ProductItem(props) {
   );
 }
 
-function List(props) {
-  const { products, isShowHeader = true, itemOnRow = 4, onItemClick } = props;
 
+// component List
+function List(props) {
+  // Detructering
+  const { products, isShowHeader = true, itemOnRow = 4, onItemClick } = props;
+// Render du lieu list
   return (
     <div className="mt-5">
       {
@@ -37,6 +44,7 @@ function List(props) {
           </>
         )
       }
+      {/* Lay 8 san pham */}
       <div className='d-flex flex-wrap'>
         {products.slice(0, 8).map((product, index) => {
             return <ProductItem key={index} onClick={() => onItemClick(product)} {...product} itemOnRow={itemOnRow} />;

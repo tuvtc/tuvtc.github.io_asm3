@@ -1,5 +1,7 @@
+// import du lieu
 import React from "react";
 
+// Component footer
 function Footer() {
   return (
     <div className="bg-black text-white p-5">

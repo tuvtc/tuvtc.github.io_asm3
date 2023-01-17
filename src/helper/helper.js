@@ -1,3 +1,4 @@
+// Format gia tien
 export const renderPrice = (price) => {
     if(price === undefined || price === null) {
         return ''

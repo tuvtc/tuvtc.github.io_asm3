@@ -1,8 +1,9 @@
+// import du lieu va css
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 
-
+// Component Sign up
 function SignUp() {
   const [inputName, setInputName] = React.useState('')
   const [inputEmail, setInputEmail] = React.useState('')
@@ -10,6 +11,7 @@ function SignUp() {
   const [inputPhone, setInputPhone] = React.useState('')
   const navigate = useNavigate();
 
+  // Lay du lieu
   const updateName = (e) => {
     setInputName(e.target.value)
   }
@@ -36,10 +38,12 @@ function SignUp() {
       return user.email === inputEmail
     })
     
+    // Neu co foundUser
     if(foundUser) {
       errors.push('Email da ton tai!')
     }
 
+    // Alert thong bao neu co
     if(errors.length) {
       alert(errors[0])
     } else {
@@ -49,6 +53,7 @@ function SignUp() {
         password: inputPassword,
         phone: inputPhone
       }
+      // day du lieu len local Storage
       userDataStorage.push(userDataInput)
       console.log(userDataStorage)
       localStorage.setItem('user', JSON.stringify(userDataStorage));
@@ -57,6 +62,7 @@ function SignUp() {
     }
   }
 
+  // Valid du lieu
   const validInput = (errors) => {
     if(!inputName || !inputEmail || !inputPassword || !inputPhone) {
       errors.push('Nhap du Full Name, Email, Password, Phone!')
@@ -65,10 +71,12 @@ function SignUp() {
     }
   }
 
+// Chuyen trang login
   function linkToSignIn() {
     navigate("/login");
   }
 
+  // Clear du lieu
   const clearInput = () => {
     setInputName('')
     setInputEmail('')
@@ -76,6 +84,7 @@ function SignUp() {
     setInputPhone('')
   }
 
+  // Render du lieu
   return (
     <div className="d-flex justify-content-center pt-5">
       <div className="card" style={{ width: "36rem" }}>

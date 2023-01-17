@@ -1,3 +1,4 @@
+// import du lieu va css
 import React from "react";
 import './ProductList.css'
 import { api } from "../api/api";
@@ -17,12 +18,14 @@ const CATEGORY = {
     OTHER: 'other'
 }
 
+// Component ProductList
 function ProductList() {
     const [category, setCategory] = React.useState(CATEGORY.ALL)
     const [products, setProducts] = React.useState([]);
 
     const navigate = useNavigate()
 
+    // bat dong bo lay du lieu product
     async function getProducts() {
       try {
         const response = await api.fetchProductList();
@@ -32,6 +35,7 @@ function ProductList() {
       }
     }
   
+    // Render du lieu khi page duoc load 
     React.useEffect(() => {
       getProducts();
     }, []);
@@ -50,6 +54,7 @@ function ProductList() {
             return (product.category === category || !category)
     })
 
+    // Render du lieu cho productList
     return (
         <div className='d-flex gap-5'>
             <div className="product-sidebar">

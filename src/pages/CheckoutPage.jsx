@@ -1,11 +1,14 @@
+// import du lieu va css
 import React from "react";
 import Navbar from "../components/Navbar";
 import { renderPrice } from "../helper/helper";
 import "./CheckoutPage.css";
 import { useSelector } from "react-redux";
 
+// Component ProdOrd
 function ProdOrd(props) {
   const { item } = props
+  // Render du lieu cua dofng product
   return (
     <>
       <p className="d-flex gap-2 justify-content-between">
@@ -17,13 +20,14 @@ function ProdOrd(props) {
   );
 }
 
+// Component CheckoutPage
 function CheckoutPage() {
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = cartItems.reduce(
     (currentTotal, item) => currentTotal + item.price * item.quantity,
     0
   );
-
+// Render du lieu cua all
   return (
     <div className="container">
       <Navbar />

@@ -1,3 +1,4 @@
+// import du lieu va css
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { api } from "../api/api";
@@ -9,6 +10,7 @@ import { ChevronLeft, ChevronRight } from "react-feather";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../redux/cart";
 
+// Component DetailPage
 function DetailPage() {
   const { id } = useParams();
   const dispatch = useDispatch()
@@ -55,6 +57,7 @@ function DetailPage() {
         (product) => product._id.$oid === id
       );
 
+      // Neu khong kiem thay product thi tro ve trang truoc
       if (!foundProduct) {
         navigate(-1);
       } else {
@@ -91,6 +94,8 @@ function DetailPage() {
     category,
     long_desc,
   } = product || {};
+
+  // render du lieu
   return (
     <div className="container py-5 gap-2">
       <Navbar />

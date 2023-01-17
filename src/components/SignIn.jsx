@@ -1,28 +1,34 @@
+// import du lieu va css
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignIn.css";
 import { useDispatch } from 'react-redux'
 import { authActions } from '../redux/auth'
 
+// Component Sign In
 function SignIn() {
   const dispatch = useDispatch()
 
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const navigate = useNavigate()
+  // Lay du lieu duoc nhap vao
   const updateEmail = (e) => {
     setEmail(e.target.value)
   }
   const updatePassword = (e) => {
     setPassword(e.target.value)
   }
+  // Valid du lieu
   const onSignIn = () => {
     if(!email || !password) {
       alert('Nhap du Email va Password')
     }
   
+    // lay du lieu tu localStorage
     let getUsers = localStorage.getItem('user')
     let userDataStorage = []
+// Kiem tra du lieu dang nhap
     if (getUsers) {
       userDataStorage = JSON.parse(getUsers)
     }
@@ -30,10 +36,13 @@ function SignIn() {
       return user.email === email && user.password === password
     })
     
+    // Neu khong co foundUser 
     if(!foundUser) {
       alert('Du lieu dang nhap khong dung!')
       setPassword('')
-    } else {
+    } 
+    // Neu co foundUser, tro ve trang Home
+    else {
       alert('Dang nhap thanh cong!')
       localStorage.setItem('loginedUser', JSON.stringify(foundUser))
       dispatch(authActions.ON_LOGIN(foundUser))
@@ -42,18 +51,22 @@ function SignIn() {
     }
   }
 
+  // Clear du lieu
   const clearAll = () => {
     setEmail('')
     setPassword('')
   }
 
+  // Qua trang signup
   const linkToSignUp = () => {
     navigate("/signup")
   }
   
+  // tro ve trang home
   const linkToHome = () => {
     navigate('/')
   }
+  // render du lieu o Sign in
   return (
     <div className="d-flex justify-content-center pt-5">
       <div className="card" style={{ width: "36rem" }}>

@@ -1,3 +1,4 @@
+// import du lieu va css
 import React from "react";
 import './Popup.css'
 import { ShoppingCart } from 'react-feather';
@@ -5,6 +6,7 @@ import { Modal, ModalBody } from 'reactstrap';
 import { useSelector, useDispatch } from "react-redux";
 import { productActions } from "../redux/product";
 
+// Tao component Popup
 function Popup() {
   const isShowPopup = useSelector(state => state.product.isShowPopup)
   const product = useSelector(state => state.product.selectedProduct)
@@ -15,7 +17,7 @@ function Popup() {
  const onCloseModal = () => {
   dispatch(productActions.HIDE_POPUP())
  }
- 
+//  render du lieu
   return (
     <Modal isOpen={isShowPopup} size={'xl'} centered={true}>
       <ModalBody>

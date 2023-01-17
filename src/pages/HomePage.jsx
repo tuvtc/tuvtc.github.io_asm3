@@ -1,3 +1,4 @@
+// import du lieu va css
 import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -10,11 +11,13 @@ import Popup from "../components/Popup";
 import { useDispatch } from "react-redux";
 import { productActions } from "../redux/product";
 
+// Component HomePage
 function HomePage() {
   const [products, setProducts] = React.useState([]);
 
   const dispatch = useDispatch()
 
+  // Bat dong bo lay du lieu product 
   async function getProducts() {
     try {
       const response = await api.fetchProductList();
@@ -23,7 +26,7 @@ function HomePage() {
       console.log(error.message);
     }
   }
-
+// Du lieu khi load page
   React.useEffect(() => {
     getProducts();
   }, []);
@@ -32,6 +35,7 @@ function HomePage() {
     dispatch(productActions.SHOW_POPUP(product))
   }
 
+  // Render du lieu
   return (
     <div>
       <div className="container">

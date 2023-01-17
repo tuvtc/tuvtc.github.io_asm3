@@ -1,3 +1,4 @@
+// Import du lieu va css
 import React from "react";
 import productImg1 from '../assets/img/product_1.png'
 import productImg2 from '../assets/img/product_2.png'
@@ -8,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import './Category.css'
 
 
+// tao component Category
 function Category() {
     const navigate = useNavigate()
     return (
@@ -17,6 +19,7 @@ function Category() {
                 <p className='fst-italic fs-5 fw-bold text-uppercase'>Browse our categories</p>
             </div>
             <div>
+                {/* Chuyen trang khi nhan san pham -> qua trang shop */}
                 <div className='d-flex gap-4'>
                     <div className="proImg"><img src={productImg1} onClick={()=>navigate("/shop")}/></div>
                     <div className="proImg"><img src={productImg2} onClick={()=>navigate("/shop")}/></div>

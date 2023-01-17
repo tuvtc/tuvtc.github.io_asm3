@@ -1,3 +1,4 @@
+// import du lieu va css
 import React from 'react'
 import "./App.css";
 import Home from './pages/HomePage'
@@ -14,7 +15,7 @@ import { useDispatch } from 'react-redux'
 import { authActions } from './redux/auth'
 import { cartActions } from './redux/cart';
 
-
+// Component App
 function App() {
   const dispatch = useDispatch()
 

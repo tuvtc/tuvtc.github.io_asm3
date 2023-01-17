@@ -1,8 +1,10 @@
+// import du lieu va css
 import React from "react";
 import Navbar from '../components/Navbar'
 import ProductList from "../components/ProductList";
 import './ShopPage.css'
 
+// component ShopPage
 function ShopPage () {
     return (
         <div className='container'>

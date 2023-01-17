@@ -1,3 +1,4 @@
+// import du lieu va css
 import React from "react";
 import Navbar from "../components/Navbar";
 import "./CartPage.css";
@@ -15,6 +16,7 @@ import { productActions } from "../redux/product";
 import { renderPrice } from "../helper/helper";
 import { cartActions } from "../redux/cart";
 
+// Component ProdLine
 function ProdLine(props) {
   const { item, onDecreaseNum, onIncreaseNum, onDelete } = props
   return (
@@ -43,6 +45,7 @@ function ProdLine(props) {
   );
 }
 
+// Component CartPage
 function CartPage() {
   const dispatch = useDispatch();
   //   Tang so luong
@@ -59,24 +62,29 @@ function CartPage() {
     }
   };
 
+  // Xoa san pham
   const onDelete = (item) => {
     dispatch(cartActions.DELETE_CART(item));
   };
   const cartItems = useSelector((state) => state.cart.items);
   const navigate = useNavigate();
+  // Chuyen trang
   const onContinueShopping = () => {
     navigate("/shop");
   };
 
+// Chuyen trang
   const onCheckOut = () => {
     navigate("/checkout");
   };
 
+  // Tinh tong
   const totalPrice = cartItems.reduce(
     (currentTotal, item) => currentTotal + item.price * item.quantity,
     0
   );
 
+  // render du lieu
   return (
     <div className="container">
       <Navbar />
